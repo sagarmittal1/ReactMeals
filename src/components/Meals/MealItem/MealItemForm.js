@@ -1,13 +1,13 @@
 import Input from '../../UI/Input';
 import classes from './MealItemForm.module.css';
 
-const MealItemForm = () => {
+const MealItemForm = (props) => {
   return (
     <form className={classes.form}>
       <Input
         label="Quantity"
         input={{
-          id: 'quantity',
+          id: 'quantity_' + props.id,
           type: 'number',
           min: '1',
           max: '5',
