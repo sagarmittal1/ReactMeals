@@ -16,3 +16,22 @@ body {
 ::selection {
   background: #e78762;
 }
+
+/* made custom scrollbar for Chrome*/
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #de7a52;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a34723;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #742708;
+}
