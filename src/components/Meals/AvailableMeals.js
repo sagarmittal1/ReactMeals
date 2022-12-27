@@ -13,7 +13,7 @@ const AvailableMeals = () => {
     // we need to use function bcoz we can't use promise in useEffect function
     const fetchMeals = async () => {
       const response = await fetch(
-        'https://react-learning-3e944-default-rtdb.firebaseio.com/meals'
+        'https://react-learning-3e944-default-rtdb.firebaseio.com/meals.json'
       );
 
       if(!response.ok) {
