@@ -62,3 +62,8 @@
   border-color: #aa0b20;
   background-color: #ffeff1;
 }
+
+/* easy fix for error-text */
+p {
+  margin: 0.4rem 0rem;
+}
