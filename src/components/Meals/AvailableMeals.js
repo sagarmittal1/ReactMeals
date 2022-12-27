@@ -1,36 +1,38 @@
+import { useEffect, useState } from 'react';
+
 import Card from '../UI/Card';
 import MealItem from './MealItem/MealItem';
 import classes from './AvailableMeals.module.css';
 
-const DUMMY_MEALS = [
-  {
-    id: 'm1',
-    name: 'Shahi Paneer',
-    description: 'Delicious sabzi for everytime',
-    price: 150.0,
-  },
-  {
-    id: 'm2',
-    name: 'Sev Tamatar',
-    description: 'Spicy & tasty sabzi for foodies',
-    price: 100.0,
-  },
-  {
-    id: 'm3',
-    name: 'Dal Baati Churma',
-    description: 'Tradional Rajasthani dish for bring royalness',
-    price: 299.99,
-  },
-  {
-    id: 'm4',
-    name: 'Idli Sambhar',
-    description: 'Healthy & tasty South Indian Dish',
-    price: 249.99,
-  },
-];
-
 const AvailableMeals = () => {
-  const mealsList = DUMMY_MEALS.map((meal) => (
+  const [meals, setMeals] = useState([]);
+
+  useEffect(() => {
+    // we need to use function bcoz we can't use promise in useEffect function
+    const fetchMeals = async () => {
+      const response = await fetch(
+        'https://react-learning-3e944-default-rtdb.firebaseio.com/meals.json'
+      );
+      const responseData = await response.json();
+
+      const loadedMeals = [];
+
+      for (const key in responseData) {
+        loadedMeals.push({
+          id: key,
+          name: responseData[key].name,
+          description: responseData[key].description,
+          price: responseData[key].price,
+        });
+      }
+
+      setMeals(loadedMeals);
+    };
+
+    fetchMeals();
+  }, []);
+
+  const mealsList = meals.map((meal) => (
     <MealItem
       id={meal.id}
       key={meal.id}
