@@ -73,7 +73,7 @@ const Checkout = (props) => {
     <form className={classes.form} onSubmit={confirmHandler}>
       <div className={nameClasses}>
         <label htmlFor="name">Name</label>
-        <input type="text" id="name" ref={nameInputRef} />
+        <input type="text" id="name" ref={nameInputRef} autoComplete="off" />
         {!formInputsValidity.name && <p>Please enter a valid name!</p>}
       </div>
       <div className={addressClasses}>
