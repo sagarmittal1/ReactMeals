@@ -44,3 +44,10 @@
   background-color: #8a2b06;
   color: white;
 }
+
+.success-text {
+  font-size: 1.5rem;
+  color: rgb(15, 114, 15);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
