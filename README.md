@@ -2,6 +2,9 @@
 
 In this project I used React to made food ordering website that have cart, meals & summary of items added in cart sections.
 
+## **UPDATE**
+Now it includes the meals fetched using HTTPS firebase database. Added checkout form to order food & send the userData & cartItems to the server using POST request. It also has proper validation check that I made for forms input. Also revamped overall styling to look better.
+
 ## Links
 
 Live Site URL: [https://react-meals-tau.vercel.app/](https://react-meals-tau.vercel.app/)
